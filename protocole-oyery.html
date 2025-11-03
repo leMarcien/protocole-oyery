@@ -628,3 +628,54 @@
 
         <div class="signatures">
             <p style="text-align: center; font-weight: bold; margin-bottom: 25
+        <div class="signatures">
+            <p style="text-align: center; font-weight: bold; margin-bottom: 25px;">
+                Fait à ____________________, le ____________________
+            </p>
+
+            <div class="signature-block">
+                <h4>Pour la Plateforme Oyery</h4>
+                <div class="signature-line">Nom : ____________________</div>
+                <div class="signature-line">Fonction : ____________________</div>
+                <div class="signature-line">Signature :</div>
+                <div style="height: 80px; border-bottom: 1px solid #333; margin-top: 10px;"></div>
+            </div>
+
+            <div class="signature-block">
+                <h4>Pour l'Auteur</h4>
+                <div class="signature-line">Nom : ____________________</div>
+                <div class="signature-line">Date de naissance : ____________________</div>
+                <div class="signature-line">Signature :</div>
+                <div style="height: 80px; border-bottom: 1px solid #333; margin-top: 10px;"></div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            Ce document est généré automatiquement. Toute modification non signée est nulle.
+        </div>
+
+        <!-- 🔥 BOUTON MAGIQUE TÉLÉCHARGER EN PDF 🔥 -->
+        <br><br><br>
+        <div style="text-align: center; margin: 60px 0;">
+            <button onclick="window.print()" 
+                    style="background:#e74c3c; color:white; padding:18px 40px; font-size:20px; font-weight:bold; border:none; border-radius:12px; cursor:pointer; box-shadow:0 6px 15px rgba(0,0,0,0.3); transition:0.3s;">
+                📥 TÉLÉCHARGER EN PDF (1 clic !)
+            </button>
+            <p style="margin-top:20px; font-size:15px; color:#e74c3c;">
+                ✅ Clique → Choisis "Enregistrer en PDF" → C'est prêt !
+            </p>
+        </div>
+
+        <script>
+            // Astuce : Ouvre l'impression automatiquement après 2 secondes
+            window.onload = function() {
+                setTimeout(() => {
+                    if (confirm("Voulez-vous télécharger le PDF maintenant ?")) {
+                        window.print();
+                    }
+                }, 2000);
+            };
+        </script>
+    </div>
+</body>
+</html>
