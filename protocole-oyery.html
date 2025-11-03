@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocole d'Accord de Distribution Numérique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: white;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 20mm;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2c3e50;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header h2 {
+            font-size: 16px;
+            color: #546e7a;
+            font-weight: normal;
+            font-style: italic;
+        }
+        
+        .parties {
+            margin: 30px 0;
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .parties h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .party-block {
+            margin-bottom: 25px;
+            line-height: 1.9;
+        }
+        
+        .party-block strong {
+            color: #2c3e50;
+            font-size: 15px;
+        }
+        
+        .preambule {
+            background: #ecf0f1;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .preambule h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #e74c3c;
+            font-style: normal;
+        }
+        
+        .article {
+            margin: 35px 0;
+            page-break-inside: avoid;
+        }
+        
+        .article h3 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            font-weight: bold;
+        }
+        
+        .article h4 {
+            font-size: 14px;
+            color: #34495e;
+            margin: 15px 0 10px 0;
+            font-weight: bold;
+        }
+        
+        .article p, .article li {
+            margin-bottom: 12px;
+            text-align: justify;
+            font-size: 13px;
+        }
+        
+        .article ol, .article ul {
+            margin-left: 25px;
+            margin-top: 12px;
+        }
+        
+        .article li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+        
+        .annexe {
+            margin-top: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border: 2px solid #0366d6;
+            page-break-before: always;
+        }
+        
+        .annexe h3 {
+            color: #0366d6;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Format optimisé pour PDF/Impression */
+        .work-entry {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .work-entry-header {
+            background: #34495e;
+            color: white;
+            padding: 10px 15px;
+            margin: -20px -20px 15px -20px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .work-row {
+            display: table;
+            width: 100%;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        
+        .work-label {
+            display: inline-block;
+            width: 40%;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 13px;
+            vertical-align: top;
+            padding-right: 10px;
+        }
+        
+        .work-value {
+            display: inline-block;
+            width: 58%;
+            border-bottom: 1px dotted #000;
+            min-height: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+        
+        .work-value-long {
+            display: block;
+            width: 100%;
+            border-bottom: 1px dotted #000;
+            min-height: 60px;
+            margin-top: 5px;
+            font-size: 13px;
+        }
+        
+        .annexe-note {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 12px;
+            font-style: italic;
+        }
+        
+        .signatures {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 3px solid #2c3e50;
+            page-break-before: always;
+        }
+        
+        .signature-block {
+            margin: 35px 0;
+            padding: 20px;
+            background: #fafafa;
+            border: 2px solid #95a5a6;
+            page-break-inside: avoid;
+        }
+        
+        .signature-block h4 {
+            font-size: 15px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .signature-line {
+            margin: 12px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 13px;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                padding: 15mm;
+            }
+            
+            .work-entry {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Protocole d'Accord de Distribution Numérique</h1>
+            <h2>Entre la Plateforme Numérique Oyery et l'Auteur</h2>
+        </div>
+
+        <div class="parties">
+            <h3>Entre les soussignés :</h3>
+            
+            <div class="party-block">
+                <strong>La Plateforme Numérique Oyery</strong>,<br>
+                Plateforme de distribution d'œuvres littéraires, éducatives et créatives sous format numérique,<br>
+                Représentée par <span style="border-bottom: 1px dotted #000; padding: 0 50px;">____________________</span>, en sa qualité de <span style="border-bottom: 1px dotted #000; padding: 0 50px;">____________________</span>,<br>
+                Filiale de <strong>Crea Technologie Solution</strong>,<br>
+                Dont le siège social est situé à <span style="border-bottom: 1px dotted #000; padding: 0 80px;">____________________</span>,<br>
+                Ci-après dénommée <span class="highlight">« Oyery »</span>,
+            </div>
+
+            <div class="party-block">
+                <strong>Et :</strong><br><br>
+                <span style="border-bottom: 1px dotted #000; padding: 0 100px;">____________________</span>,<br>
+                Né(e) le <span style="border-bottom: 1px dotted #000; padding: 0 50px;">____________________</span> à <span style="border-bottom: 1px dotted #000; padding: 0 50px;">____________________</span>,<br>
+                Résidant à <span style="border-bottom: 1px dotted #000; padding: 0 100px;">____________________</span>,<br>
+                Titulaire des droits d'auteur sur les œuvres ci-après décrites,<br>
+                Ci-après dénommé(e) <span class="highlight">« l'Auteur »</span>,
+            </div>
+
+            <p style="margin-top: 20px;">Les deux parties sont ci-après collectivement désignées <span class="highlight">« les Parties »</span>.</p>
+        </div>
+
+        <div class="preambule">
+            <h3>Préambule</h3>
+            <p>Les Parties souhaitent établir une collaboration pour la distribution numérique des œuvres (au pluriel) de l'Auteur via la plateforme Oyery, dans un esprit de confiance mutuelle, de respect des droits de propriété intellectuelle et d'authenticité créative humaine.</p>
+        </div>
+
+        <div class="article">
+            <h3>Article 1 : Objet du protocole</h3>
+            <p>Le présent protocole définit les modalités selon lesquelles Oyery assure la <strong>distribution, la commercialisation et la promotion</strong> des <strong>œuvres numériques</strong> fournies par l'Auteur sur sa plateforme numérique et ses canaux partenaires.</p>
+            <p>Les œuvres doivent être fournies au format <strong>PDF</strong> ou tout autre format numérique validé par écrit par les Parties (ex. : EPUB, MOBI). Elles incluent, sans s'y limiter : livres, manuels éducatifs, guides, etc. <strong>La liste complète figure en Annexe 2.</strong></p>
+        </div>
+
+        <div class="article">
+            <h3>Article 2 : Nature du contrat</h3>
+            <p>La collaboration peut être <strong>exclusive</strong> (Oyery détient les droits exclusifs de distribution numérique) ou <strong>non exclusive</strong>, selon accord mutuel <strong>par œuvre ou global</strong>.</p>
+            <p>Cette nature sera précisée dans <strong>l'Annexe 1</strong> jointe, modifiable par avenant.</p>
+        </div>
+
+        <div class="article">
+            <h3>Article 3 : Droits de propriété intellectuelle et licence</h3>
+            <ol>
+                <li>L'Auteur reste <strong>propriétaire exclusif</strong> de tous les droits d'auteur, moraux et patrimoniaux sur <strong>ses œuvres</strong>.</li>
+                <li>L'Auteur accorde à Oyery une <strong>licence non exclusive (ou exclusive si précisé en Annexe 1), limitée, transférable uniquement</strong> à sa maison mère <strong>Crea Technologie Solution</strong>, pour :
+                    <ul>
+                        <li>Reproduire, distribuer, commercialiser et promouvoir <strong>les œuvres</strong> ;</li>
+                        <li>Les adapter aux formats techniques de la plateforme.</li>
+                    </ul>
+                </li>
+                <li><strong>Territoires</strong> : Mondial, sauf restriction précisée en Annexe.</li>
+                <li>Toute cession ou sous-licence à un tiers non affilié est <strong>interdite sans autorisation écrite préalable</strong> de l'Auteur.</li>
+                <li>Oyery s'engage à mentionner l'Auteur comme titulaire des droits sur toutes les pages de vente.</li>
+                <li><strong>Clause anti-IA</strong> : Oyery se réserve le droit de rejeter ou de discriminer toute œuvre contenant du contenu généré par intelligence artificielle (voir Article 5 pour détails).</li>
+            </ol>
+        </div>
+
+        <div class="article">
+            <h3>Article 4 : Rémunération</h3>
+            <ol>
+                <li>Oyery reverse à l'Auteur <span class="highlight">70 % du montant net HT</span> des ventes (après déduction des frais de transaction et taxes) pour les œuvres <strong>100 % humaines</strong>.</li>
+                <li>Pour les œuvres détectées comme IA-assistées : <span class="highlight">Réduction à 50 %</span> des royalties.</li>
+                <li>Paiements <strong>trimestriels</strong> (janvier, avril, juillet, octobre), par virement bancaire, sous 30 jours suivant le rapport de ventes.</li>
+                <li>Rapport détaillé fourni : ventes <strong>par œuvre</strong>, revenus, déductions, et résultats anti-IA.</li>
+            </ol>
+        </div>
+
+        <div class="article">
+            <h3>Article 5 : Obligations des Parties</h3>
+            
+            <h4>Obligations de l'Auteur :</h4>
+            <ul>
+                <li>Fournir une version numérique <strong>conforme</strong> pour <strong>chaque œuvre</strong> (PDF haute qualité, métadonnées ISBN/titre/auteur, couverture HD) ;</li>
+                <li>Garantir l'<strong>originalité</strong> de <strong>chaque œuvre</strong> et l'absence de plagiat ou violation de droits tiers ;</li>
+                <li><strong>Déclaration anti-IA</strong> : Certifier que <strong>chaque œuvre</strong> est <strong>majoritairement créée par un humain</strong> (outils IA autorisés uniquement pour correction/édition mineure) ;</li>
+                <li>Informer Oyery de toute modification ou retrait souhaité.</li>
+                <li><strong>Examen anti-IA obligatoire</strong> : <strong>Toutes les œuvres</strong>, <strong>qu'elles datent d'avant ou après 2019</strong>, seront soumises à un <strong>examen automatique via outils reconnus</strong> (ex. : GPTZero, Originality.ai, Copyleaks).
+                    <ul>
+                        <li>Si <strong>contenu IA détecté > 20 %</strong> : L'œuvre sera <strong>discriminée</strong> (refus, label "IA-assistée" visible sur la page, royalties réduites, ou retrait).</li>
+                        <li>Rapport d'examen fourni à l'Auteur sous 7 jours <strong>par œuvre</strong>.</li>
+                        <li>L'Auteur peut contester avec preuves (fichiers sources, historiques d'écriture).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Obligations d'Oyery :</h4>
+            <ul>
+                <li>Héberger et rendre accessible <strong>les œuvres</strong> <strong>24/7</strong> sur la plateforme et apps mobiles ;</li>
+                <li>Assurer une <strong>visibilité optimale</strong> : page dédiée <strong>par œuvre</strong>, SEO, recommandations, promotions ;</li>
+                <li>Fournir un <strong>tableau de bord auteur</strong> pour suivre les ventes et rapports anti-IA <strong>par œuvre</strong> en temps réel ;</li>
+                <li>Protéger les fichiers contre le piratage (DRM si demandé) ;</li>
+                <li>Effectuer l'<strong>examen anti-IA</strong> de manière confidentielle et objective.</li>
+            </ul>
+        </div>
+
+        <div class="article">
+            <h3>Article 6 : Durée et résiliation</h3>
+            <ol>
+                <li>Durée initiale : <span class="highlight">2 ans</span> à compter de la signature, renouvelable tacitement par période d'1 an.</li>
+                <li>Résiliation :
+                    <ul>
+                        <li>À tout moment par l'une des Parties, avec <strong>préavis écrit de 30 jours</strong> (valable pour <strong>toutes les œuvres</strong> ou <strong>par œuvre</strong> si précisé) ;</li>
+                        <li>De plein droit en cas de manquement grave (non-paiement, violation IP, <strong>contenu IA non déclaré</strong>), après mise en demeure restée sans effet 15 jours.</li>
+                    </ul>
+                </li>
+                <li>À la résiliation, Oyery retire <strong>les œuvres concernées</strong> sous 48 heures et règle les sommes dues.</li>
+            </ol>
+        </div>
+
+        <div class="article">
+            <h3>Article 7 : Confidentialité et protection des données</h3>
+            <p>Les Parties s'engagent à préserver la confidentialité des informations échangées, y compris les rapports anti-IA.</p>
+            <p>Conformément au RGPD (ou loi gabonaise équivalente), les données personnelles sont protégées et non partagées sans consentement.</p>
+        </div>
+
+        <div class="article">
+            <h3>Article 8 : Loi applicable et règlement des différends</h3>
+            <p>Gouverné par la <strong>législation de la République Gabonaise</strong>.</p>
+            <p>Tout litige sera résolu à l'amiable ; à défaut, par les tribunaux de <span style="border-bottom: 1px dotted #000; padding: 0 80px;">____________________</span>.</p>
+        </div>
+
+        <div class="article">
+            <h3>Article 9 : Dispositions finales</h3>
+            <ul>
+                <li>Le protocole prime sur tout accord verbal antérieur.</li>
+                <li>Modifications ou <strong>ajout d'œuvres</strong> par <strong>avenant signé</strong>.</li>
+                <li>Entrée en vigueur : date de signature.</li>
+                <li>Exemplaires : 2 originaux.</li>
+            </ul>
+        </div>
+
+        <div class="annexe">
+            <h3>Annexe 1 : Nature de la collaboration</h3>
+            <p style="margin: 15px 0;"><strong>Collaboration globale :</strong> <span style="border-bottom: 1px dotted #000; padding: 0 40px; margin-left: 10px;">☐ Exclusive / ☐ Non exclusive</span></p>
+            <p style="margin: 15px 0;"><strong>Exceptions par œuvre :</strong> <span style="border-bottom: 1px dotted #000; padding: 0 120px; margin-left: 10px;">____________________</span></p>
+        </div>
+
+        <div class="annexe">
+            <h3>ANNEXE 2 : LISTE DES ŒUVRES À DISTRIBUER</h3>
+            
+            <div class="annexe-note">
+                <strong>📝 Instructions :</strong> Remplissez une fiche complète pour chaque œuvre soumise. Chaque œuvre sera examinée individuellement pour détecter tout contenu généré par IA. Les champs marqués d'un astérisque (*) sont obligatoires.
+            </div>
+
+            <!-- ŒUVRE 1 -->
+            <div class="work-entry">
+                <div class="work-entry-header">ŒUVRE N°1</div>
+                
+                <div class="work-row">
+                    <span class="work-label">Titre de l'œuvre * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">ISBN / Identifiant :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Date de création * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Format * :</span>
+                    <span class="work-value">☐ PDF  ☐ EPUB  ☐ MOBI  ☐ Autre : ___________</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Exclusivité * :</span>
+                    <span class="work-value">☐ Oui (Exclusive)  ☐ Non (Non-exclusive)</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Territoires exclus :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Description brève * :</span>
+                    <span class="work-value-long">&nbsp;</span>
+                </div>
+            </div>
+
+            <!-- ŒUVRE 2 -->
+            <div class="work-entry">
+                <div class="work-entry-header">ŒUVRE N°2</div>
+                
+                <div class="work-row">
+                    <span class="work-label">Titre de l'œuvre * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">ISBN / Identifiant :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Date de création * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Format * :</span>
+                    <span class="work-value">☐ PDF  ☐ EPUB  ☐ MOBI  ☐ Autre : ___________</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Exclusivité * :</span>
+                    <span class="work-value">☐ Oui (Exclusive)  ☐ Non (Non-exclusive)</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Territoires exclus :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Description brève * :</span>
+                    <span class="work-value-long">&nbsp;</span>
+                </div>
+            </div>
+
+            <!-- ŒUVRE 3 -->
+            <div class="work-entry">
+                <div class="work-entry-header">ŒUVRE N°3</div>
+                
+                <div class="work-row">
+                    <span class="work-label">Titre de l'œuvre * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">ISBN / Identifiant :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Date de création * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Format * :</span>
+                    <span class="work-value">☐ PDF  ☐ EPUB  ☐ MOBI  ☐ Autre : ___________</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Exclusivité * :</span>
+                    <span class="work-value">☐ Oui (Exclusive)  ☐ Non (Non-exclusive)</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Territoires exclus :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Description brève * :</span>
+                    <span class="work-value-long">&nbsp;</span>
+                </div>
+            </div>
+
+            <!-- ŒUVRE 4 -->
+            <div class="work-entry">
+                <div class="work-entry-header">ŒUVRE N°4</div>
+                
+                <div class="work-row">
+                    <span class="work-label">Titre de l'œuvre * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">ISBN / Identifiant :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Date de création * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Format * :</span>
+                    <span class="work-value">☐ PDF  ☐ EPUB  ☐ MOBI  ☐ Autre : ___________</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Exclusivité * :</span>
+                    <span class="work-value">☐ Oui (Exclusive)  ☐ Non (Non-exclusive)</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Territoires exclus :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Description brève * :</span>
+                    <span class="work-value-long">&nbsp;</span>
+                </div>
+            </div>
+
+            <!-- ŒUVRE 5 -->
+            <div class="work-entry">
+                <div class="work-entry-header">ŒUVRE N°5</div>
+                
+                <div class="work-row">
+                    <span class="work-label">Titre de l'œuvre * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">ISBN / Identifiant :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Date de création * :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Format * :</span>
+                    <span class="work-value">☐ PDF  ☐ EPUB  ☐ MOBI  ☐ Autre : ___________</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Exclusivité * :</span>
+                    <span class="work-value">☐ Oui (Exclusive)  ☐ Non (Non-exclusive)</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Territoires exclus :</span>
+                    <span class="work-value">&nbsp;</span>
+                </div>
+                
+                <div class="work-row">
+                    <span class="work-label">Description brève * :</span>
+                    <span class="work-value-long">&nbsp;</span>
+                </div>
+            </div>
+
+            <div class="annexe-note" style="margin-top: 25px;">
+                <strong>⚠️ Note importante :</strong> Si vous avez plus de 5 œuvres à déclarer, veuillez joindre des pages supplémentaires en respectant le même format, ou établir un avenant ultérieur.
+            </div>
+
+            <div class="annexe-note" style="background: #e8f5e9; border-left-color: #4caf50;">
+                <strong>✅ Certification anti-IA :</strong> Chaque œuvre listée ci-dessus sera soumise à un examen anti-IA automatique via des outils reconnus. Un rapport détaillé sera fourni à l'Auteur sous 7 jours ouvrables pour chaque œuvre. Les œuvres avec un taux de contenu IA supérieur à 20% feront l'objet de mesures discriminatoires conformément à l'Article 5 du présent protocole.
+            </div>
+        </div>
+
+        <div class="signatures">
+            <p style="text-align: center; font-weight: bold; margin-bottom: 25
